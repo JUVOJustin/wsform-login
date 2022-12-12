@@ -39,6 +39,10 @@ jobs:
         if: steps.cache-npm.outputs.cache-hit != 'true'
         run: npm install
 
+      - name: SatisPress Login for Test Dependencies
+        run: |
+          composer config http-basic.plugin.juvo-design.de \${{ secrets.SATISPRESS_KEY }} satispress
+
       - name: Build assets
         run: |
           npm run production

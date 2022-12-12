@@ -12,7 +12,7 @@ module.exports = defineConfig({
 
       // modify config values
       if (!config.env.wp_username) {
-        config.env.plugin_slug = 'wsform-login'
+        config.env.plugin_slug = 'ws-form-login'
         config.env.wp_username = 'admin';
         config.env.wp_password = 'password';
       }

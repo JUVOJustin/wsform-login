@@ -6,3 +6,5 @@ setup.sh
 /admin/dist/
 /tests/cypress/screenshots/
 /tests/cypress/videos/
+/tests/setup/plugins
+/tests/setup/vendor
