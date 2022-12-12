@@ -15,7 +15,7 @@ class Redirect {
      */
     public function login_url($url, $redirect, $force_reauth ){
 
-        $post_id = cmb2_get_option( 'wsform_login', 'login' );
+        $post_id = (int) cmb2_get_option( 'wsform_login', 'login' );
         if (empty($post_id)) {
             return $url;
         }
@@ -38,7 +38,7 @@ class Redirect {
      */
     public function lostpassword_url( $url, $redirect ){
 
-        $post_id = cmb2_get_option( 'wsform_login', 'forgot_password' );
+        $post_id = (int) cmb2_get_option( 'wsform_login', 'forgot_password' );
         if (empty($post_id)) {
             return $url;
         }

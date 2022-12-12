@@ -12,5 +12,6 @@ parameters:
     scanDirectories:
     scanFiles:
         - %rootDir%/../../php-stubs/acf-pro-stubs/acf-pro-stubs.php
+        - %rootDir%/../../lipemat/phpstan-wordpress/stubs/cmb2/cmb2-2.9.php
     bootstrapFiles:
         - constants.php

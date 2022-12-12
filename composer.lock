@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "55b8db595c9d58f2aef40f09d939c25d",
+    "content-hash": "5f1bdd053a11969e3e1e94a7df221724",
     "packages": [
         {
             "name": "cmb2/cmb2",
@@ -146,6 +146,64 @@
                 }
             ],
             "time": "2022-03-03T08:28:38+00:00"
+        },
+        {
+            "name": "lipemat/phpstan-wordpress",
+            "version": "2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lipemat/phpstan-wordpress.git",
+                "reference": "bc750091522c71319e2972d6b738cc2abd439284"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lipemat/phpstan-wordpress/zipball/bc750091522c71319e2972d6b738cc2abd439284",
+                "reference": "bc750091522c71319e2972d6b738cc2abd439284",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2",
+                "php-stubs/woocommerce-stubs": "^6.6.0",
+                "php-stubs/wp-cli-stubs": "^2.6.0",
+                "phpstan/extension-installer": "^1.1.0",
+                "psr/container": "^1.1.2",
+                "szepeviktor/phpstan-wordpress": "^1.1.2"
+            },
+            "require-dev": {
+                "composer/composer": "^2.2.14",
+                "giacocorsiglia/stubs-generator": "^0.5.0",
+                "lipemat/cmb2": "~2.9.0.6",
+                "roave/security-advisories": "dev-latest"
+            },
+            "type": "phpstan-extension",
+            "extra": {
+                "phpstan": {
+                    "includes": [
+                        "extension.neon"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lipe\\Lib\\Phpstan\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Phpstan extension for working with WordPress",
+            "support": {
+                "issues": "https://github.com/lipemat/phpstan-wordpress/issues",
+                "source": "https://github.com/lipemat/phpstan-wordpress/tree/2.2.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/lipemat",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-11-15T17:57:26+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -418,6 +476,50 @@
             "time": "2022-05-28T19:55:17+00:00"
         },
         {
+            "name": "php-stubs/woocommerce-stubs",
+            "version": "v6.9.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-stubs/woocommerce-stubs.git",
+                "reference": "823aa38297d9013b96c5eab2846c260bbe12b975"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-stubs/woocommerce-stubs/zipball/823aa38297d9013b96c5eab2846c260bbe12b975",
+                "reference": "823aa38297d9013b96c5eab2846c260bbe12b975",
+                "shasum": ""
+            },
+            "require": {
+                "php-stubs/wordpress-stubs": "^5.3 || ^6.0"
+            },
+            "require-dev": {
+                "php": "~7.1 || ~8.0",
+                "php-stubs/generator": "^0.8.0"
+            },
+            "suggest": {
+                "symfony/polyfill-php73": "Symfony polyfill backporting some PHP 7.3+ features to lower PHP versions",
+                "szepeviktor/phpstan-wordpress": "WordPress extensions for PHPStan"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "WooCommerce function and class declaration stubs for static analysis.",
+            "homepage": "https://github.com/php-stubs/woocommerce-stubs",
+            "keywords": [
+                "PHPStan",
+                "static analysis",
+                "woocommerce",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/php-stubs/woocommerce-stubs/issues",
+                "source": "https://github.com/php-stubs/woocommerce-stubs/tree/v6.9.4"
+            },
+            "time": "2022-10-12T08:01:21+00:00"
+        },
+        {
             "name": "php-stubs/wordpress-stubs",
             "version": "v6.1.0",
             "source": {
@@ -463,6 +565,50 @@
                 "source": "https://github.com/php-stubs/wordpress-stubs/tree/v6.1.0"
             },
             "time": "2022-11-09T05:33:25+00:00"
+        },
+        {
+            "name": "php-stubs/wp-cli-stubs",
+            "version": "v2.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-stubs/wp-cli-stubs.git",
+                "reference": "428544fc3696273bfbb4cffe4ac88f5fed428fc8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-stubs/wp-cli-stubs/zipball/428544fc3696273bfbb4cffe4ac88f5fed428fc8",
+                "reference": "428544fc3696273bfbb4cffe4ac88f5fed428fc8",
+                "shasum": ""
+            },
+            "require": {
+                "php-stubs/wordpress-stubs": "^4.7 || ^5.0 || ^6.0"
+            },
+            "require-dev": {
+                "php": "~7.3 || ~8.0",
+                "php-stubs/generator": "^0.8.0"
+            },
+            "suggest": {
+                "symfony/polyfill-php73": "Symfony polyfill backporting some PHP 7.3+ features to lower PHP versions",
+                "szepeviktor/phpstan-wordpress": "WordPress extensions for PHPStan"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "WP-CLI function and class declaration stubs for static analysis.",
+            "homepage": "https://github.com/php-stubs/wp-cli-stubs",
+            "keywords": [
+                "PHPStan",
+                "static analysis",
+                "wordpress",
+                "wp-cli"
+            ],
+            "support": {
+                "issues": "https://github.com/php-stubs/wp-cli-stubs/issues",
+                "source": "https://github.com/php-stubs/wp-cli-stubs/tree/v2.7.0"
+            },
+            "time": "2022-11-10T19:19:05+00:00"
         },
         {
             "name": "phpstan/extension-installer",
@@ -986,6 +1132,54 @@
                 }
             ],
             "time": "2022-12-09T07:31:23+00:00"
+        },
+        {
+            "name": "psr/container",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/container.git",
+                "reference": "513e0666f7216c7459170d56df27dfcefe1689ea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/513e0666f7216c7459170d56df27dfcefe1689ea",
+                "reference": "513e0666f7216c7459170d56df27dfcefe1689ea",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Container\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common Container Interface (PHP FIG PSR-11)",
+            "homepage": "https://github.com/php-fig/container",
+            "keywords": [
+                "PSR-11",
+                "container",
+                "container-interface",
+                "container-interop",
+                "psr"
+            ],
+            "support": {
+                "issues": "https://github.com/php-fig/container/issues",
+                "source": "https://github.com/php-fig/container/tree/1.1.2"
+            },
+            "time": "2021-11-05T16:50:12+00:00"
         },
         {
             "name": "sebastian/cli-parser",
