@@ -38,6 +38,7 @@ jobs:
         run: |
           cd ./tests/setup
           composer config http-basic.plugins.juvo-design.de ${{ secrets.SATISPRESS_KEY }} satispress
+          composer install
 
       - name: Cache npm packages
         id: cache-npm
