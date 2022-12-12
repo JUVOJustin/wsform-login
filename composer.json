@@ -61,6 +61,6 @@
   },
   "require": {
     "cmb2/cmb2": "^2.9",
-    "mte90/cmb2-field-ajax-search": "*"
+    "mte90/cmb2-field-ajax-search": "^2"
   }
 }
