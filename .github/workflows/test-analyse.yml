@@ -41,6 +41,7 @@ jobs:
 
       - name: SatisPress Login for Test Dependencies
         run: |
+          cd ./tests/setup
           composer config http-basic.plugin.juvo-design.de \${{ secrets.SATISPRESS_KEY }} satispress
 
       - name: Build assets
