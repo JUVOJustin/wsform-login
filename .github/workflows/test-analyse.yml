@@ -26,6 +26,14 @@ jobs:
         if: steps.cache-composer.outputs.cache-hit != 'true'
         run: composer install --prefer-dist --no-interaction --no-progress
 
+      - name: Set Test Composer authentication
+        env:
+          satispress_key: ${{ secrets.SATISPRESS_KEY }}
+        if: ${{ env.satispress_key != '' }}
+        run: |
+          cd ./tests/setup
+          composer config http-basic.plugins.juvo-design.de ${{ secrets.SATISPRESS_KEY }} satispress
+
       - name: Cache Composer (Test) packages
         id: cache-composer-test
         uses: actions/cache@v3
@@ -36,9 +44,7 @@ jobs:
       - name: Install (Test) dependencies
         if: steps.cache-composer-test.outputs.cache-hit != 'true'
         run: |
-          cd ./tests/setup
-          composer config http-basic.plugins.juvo-design.de ${{ secrets.SATISPRESS_KEY }} satispress
-          composer install
+          npm run composer:test
 
       - name: Cache npm packages
         id: cache-npm
