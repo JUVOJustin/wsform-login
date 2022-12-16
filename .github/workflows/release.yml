@@ -18,15 +18,26 @@ jobs:
         run: composer validate
 
       - name: Cache Composer packages
-        id: cache-composer
-        uses: actions/cache@v3
+        id: composer-cache
+        uses: actions/cache@v2
         with:
           path: vendor
-          key: composer-prod-${{ hashFiles('composer.lock') }}
-
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+      # Composer Install
       - name: Install dependencies
-        if: steps.cache-composer.outputs.cache-hit != 'true'
-        run: composer install --no-dev --prefer-dist --no-interaction --no-progress
+        run: composer install --no-dev --prefer-dist --no-progress --no-suggest --ignore-platform-reqs
+
+      # Node Install
+      - name: Node install Dependencies
+        run: npm install
+
+      # Build Assets
+      - name: Build assets
+        run: |
+          npm run production
+          rm -rf node_modules && npm install --production
 
       # Update Version
       - name: Set env
