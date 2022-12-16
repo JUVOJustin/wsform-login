@@ -13,7 +13,7 @@
  * @package           WSForm_Login
  *
  * @wordpress-plugin
- * Plugin Name:       WS-Form Login
+ * Plugin Name:       JUVO Login for WS-Form
  * Description:       Integrates WS-Forms into the WordPress login system.
  * Version:           1.0.0
  * Author:            Justin Vogt

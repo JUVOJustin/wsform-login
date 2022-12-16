@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== JUVO Login for WS-Form ===
 Contributors: (this should be a list of wordpress.org userid's)
 Donate link: https://juvo-design.de
 Tags: comments, spam
