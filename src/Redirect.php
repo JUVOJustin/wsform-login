@@ -13,7 +13,12 @@ class Redirect {
      *
      * @return string
      */
-    public function login_url($url, $redirect, $force_reauth ){
+    public function login_url($url, $redirect, $force_reauth ) {
+
+        // Do not redirect "Switch to user" requests
+        if (!empty($_GET['action']) && $_GET['action'] == 'switch_to_user') {
+            return $url;
+        }
 
         $post_id = (int) cmb2_get_option( 'wsform_login', 'login' );
         if (empty($post_id)) {
