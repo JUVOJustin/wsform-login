@@ -16,7 +16,12 @@ class Redirect {
     public function login_url($url, $redirect, $force_reauth ) {
 
         // Do not redirect "Switch to user" requests
-        if (!empty($_GET['action']) && $_GET['action'] == 'switch_to_user') {
+        if (
+            !empty($_GET['action'])
+            && ($_GET['action'] == 'switch_to_user'
+            || $_GET['action'] == 'switch_off'
+            || $_GET['action'] == 'switch_to_olduser')
+        ) {
             return $url;
         }
 
