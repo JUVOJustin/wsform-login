@@ -62,3 +62,19 @@ jobs:
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
           SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
           SLUG:  juvo-ws-form-login
+          
+      # Zip everything
+      - shell: bash
+        run: |
+          cd ..
+          sudo apt-get install zip
+          zip -r ${{ github.event.repository.name }}.zip ./*
+          mkdir ${{ github.workspace }}/dist
+          mv ${{ github.event.repository.name }}.zip ${{ github.workspace }}/dist
+          
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: ${{ env.RELEASE_VERSION }}
+          tag_name: ${{ env.RELEASE_VERSION }}
+          files: ${{ github.workspace }}/dist/${{ github.event.repository.name }}.zip
