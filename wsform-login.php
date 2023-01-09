@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       JUVO Login for WS-Form
  * Description:       Integrates WS-Forms into the WordPress login system.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Justin Vogt
  * Author URI:        https://juvo-design.de
  * License:           GPL-2.0+
