@@ -26,4 +26,15 @@ class Unblock
 
     }
 
+    public function unblock_rest_api(bool $is_private) {
+
+        // Allow ws form rest api requests
+        if (strpos($_SERVER['REQUEST_URI'], 'wp-json/ws-form') !== false) {
+            return false;
+        }
+
+        return $is_private;
+
+    }
+
 }

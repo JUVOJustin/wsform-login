@@ -114,7 +114,7 @@ class WSForm_Login
 
         // Integrations - Members
         $this->loader->add_filter('members_is_private_page', new Integrations\Members\Unblock(), 'unblock');
-
+        $this->loader->add_filter('members_is_private_rest_api', new Integrations\Members\Unblock(), 'unblock_rest_api');
     }
 
     /**
@@ -154,10 +154,13 @@ class WSForm_Login
                 return;
             }
 
+            // Run loader to add all filters/actions
             $this->loader->run();
 
         }, 20);
 
+        // Also run loader before plugins_loaded e.g. for api
+        $this->loader->run();
 
     }
 
