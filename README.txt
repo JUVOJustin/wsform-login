@@ -25,6 +25,8 @@ Yes. The pages that are set up as login pages will not be blocked by hte members
 It allows you to set up a "Login", "Forgot Password" and "Reset Password" page. After that these pages are hooked into the `login_url` and `lostpassword_url`.
 
 == Changelog ==
+= 1.0.1 =
+Update dependencies and ci pipeline
 
 = 1.0 =
 Initial Release
