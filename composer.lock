@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5f1bdd053a11969e3e1e94a7df221724",
+    "content-hash": "99e7ea475527a5b65e8bca080bd085fb",
     "packages": [
         {
             "name": "cmb2/cmb2",
@@ -433,16 +433,16 @@
         },
         {
             "name": "php-stubs/acf-pro-stubs",
-            "version": "v5.12.3",
+            "version": "v6.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-stubs/acf-pro-stubs.git",
-                "reference": "9391822d613d3fde17deac8e6b343c346e5db73f"
+                "reference": "3301f61c975ee6078fc89c1f6ba70358349ea137"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-stubs/acf-pro-stubs/zipball/9391822d613d3fde17deac8e6b343c346e5db73f",
-                "reference": "9391822d613d3fde17deac8e6b343c346e5db73f",
+                "url": "https://api.github.com/repos/php-stubs/acf-pro-stubs/zipball/3301f61c975ee6078fc89c1f6ba70358349ea137",
+                "reference": "3301f61c975ee6078fc89c1f6ba70358349ea137",
                 "shasum": ""
             },
             "require": {
@@ -471,9 +471,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-stubs/acf-pro-stubs/issues",
-                "source": "https://github.com/php-stubs/acf-pro-stubs/tree/v5.12.3"
+                "source": "https://github.com/php-stubs/acf-pro-stubs/tree/v6.0.6"
             },
-            "time": "2022-12-25T22:14:16+00:00"
+            "time": "2022-12-25T22:14:41+00:00"
         },
         {
             "name": "php-stubs/woocommerce-stubs",
