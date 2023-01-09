@@ -64,26 +64,23 @@ jobs:
             README.txt
           commit-msg: Update Version in WordPress specific files
           github-token: ${{ secrets.GITHUB_TOKEN }}
-
+          
       - name: WordPress Plugin Deploy
+        id: deploy
         uses: 10up/action-wordpress-plugin-deploy@stable
-        env:
-          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
-          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
-          SLUG:  juvo-ws-form-login
-          
-      # Zip everything
-      - shell: bash
-        run: |
-          cd ..
-          sudo apt-get install zip
-          zip -r ${{ github.event.repository.name }}.zip ./*
-          mkdir ${{ github.workspace }}/dist
-          mv ${{ github.event.repository.name }}.zip ${{ github.workspace }}/dist
-          
-      - name: Release
-        uses: softprops/action-gh-release@v1
         with:
-          name: ${{ env.RELEASE_VERSION }}
-          tag_name: ${{ env.RELEASE_VERSION }}
-          files: ${{ github.workspace }}/dist/${{ github.event.repository.name }}.zip
+          generate-zip: true
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SLUG: juvo-ws-form-login
+          
+      - name: Upload release asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ${{ steps.deploy.outputs.zip-path }}
+          asset_name: ${{ github.event.repository.name }}.zip
+          asset_content_type: application/zip
