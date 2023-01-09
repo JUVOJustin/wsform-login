@@ -17,7 +17,7 @@
   },
   "require": {
     "juvo/ws-form-pro": "*",
-    "juvo/ws-form-user": "1.4.7"
+    "juvo/ws-form-user": "*"
   },
   "extra": {
     "installer-paths": {
