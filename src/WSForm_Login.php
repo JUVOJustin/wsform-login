@@ -111,6 +111,7 @@ class WSForm_Login
         $redirect = new Redirect();
         $this->loader->add_filter('login_url', $redirect, 'login_url', 10, 3);
         $this->loader->add_filter('lostpassword_url', $redirect, 'lostpassword_url', 11, 2);
+        $this->loader->add_filter('register_url', $redirect, 'registration_url', 11);
 
         // Integrations - Members
         $this->loader->add_filter('members_is_private_page', new Integrations\Members\Unblock(), 'unblock');

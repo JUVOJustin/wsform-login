@@ -15,7 +15,8 @@ class Unblock
         $ids_to_unblock= [
             cmb2_get_option( 'wsform_login', 'login', null ),
             cmb2_get_option( 'wsform_login', 'forgot_password', null ),
-            cmb2_get_option( 'wsform_login', 'reset_password', null )
+            cmb2_get_option( 'wsform_login', 'reset_password', null ),
+            cmb2_get_option( 'wsform_login', 'registration', null )
         ];
 
         if (in_array($post->ID, $ids_to_unblock)) {

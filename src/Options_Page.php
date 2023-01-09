@@ -43,8 +43,19 @@ class Options_Page
 
         $main_options->add_field(array(
             'name'       => __('Reset Password Page', 'wsform-login'),
-            'desc'       => __('Type the title of the page that contains reset password', 'wsform-login'),
+            'desc'       => __('Type the title of the page that contains the reset password form', 'wsform-login'),
             'id'         => 'reset_password',
+            'type'       => 'post_ajax_search',
+            'query_args' => array(
+                'post_type'      => array('post', 'page'),
+                'posts_per_page' => -1
+            )
+        ));
+
+        $main_options->add_field(array(
+            'name'       => __('Registration Page', 'wsform-login'),
+            'desc'       => __('Type the title of the page that contains the registration form', 'wsform-login'),
+            'id'         => 'registration',
             'type'       => 'post_ajax_search',
             'query_args' => array(
                 'post_type'      => array('post', 'page'),

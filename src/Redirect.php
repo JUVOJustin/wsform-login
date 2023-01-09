@@ -5,7 +5,7 @@ namespace WSForm_Login;
 class Redirect {
 
     /**
-     * Filters the login URL
+     * Filters the login URL and sets it to the page selected on the options page
      *
      * @param string $url    The login URL. Not HTML-encoded.
      * @param string $redirect     The path to redirect to on login, if supplied.
@@ -40,13 +40,13 @@ class Redirect {
     }
 
     /**
-     * Filters the password reset url
+     * Filters the password reset url and sets it to the page selected on the options page
      *
      * @param $url
      * @param string $redirect The path to redirect to after password forgot
      * @return string
      */
-    public function lostpassword_url( $url, $redirect ){
+    public function lostpassword_url( $url, $redirect ) {
 
         $post_id = (int) cmb2_get_option( 'wsform_login', 'forgot_password' );
         if (empty($post_id)) {
@@ -60,6 +60,22 @@ class Redirect {
     }
 
     /**
+     * Filters the registration url and sets it to the page selected on the options page
+     *
+     * @param string $url
+     * @return string
+     */
+    public function registration_url( string $url ): string {
+        $post_id = (int) cmb2_get_option( 'wsform_login', 'registration' );
+        if (empty($post_id)) {
+            return $url;
+        }
+        return get_permalink($post_id);
+    }
+
+    /**
+     * Filter the string to maybe add a redirect parameter
+     *
      * @param string $url
      * @param string|null $redirect
      * @return string
