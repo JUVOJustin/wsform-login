@@ -12,7 +12,7 @@ module.exports = defineConfig({
 
       // modify config values
       if (!config.env.wp_username) {
-        config.env.plugin_slug = 'juvo-login-for-ws-form'
+        config.env.plugin_slug = 'juvo-ws-form-login'
         config.env.wp_username = 'admin';
         config.env.wp_password = 'password';
       }
