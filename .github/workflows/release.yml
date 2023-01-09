@@ -70,6 +70,6 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          name: wsform-login-${{ env.RELEASE_VERSION }}
+          name: ${{ env.RELEASE_VERSION }}
           tag_name: ${{ env.RELEASE_VERSION }}
           files: ${{ steps.deploy.outputs.zip-path }}
