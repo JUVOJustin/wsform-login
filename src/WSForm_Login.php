@@ -106,21 +106,13 @@ class WSForm_Login
         $this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_styles');
         $this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts');
 
-        // Check if ws forms is loaded
-        if (
-            !defined('WS_FORM_VERSION')
-            || !is_plugin_active('ws-form-pro/ws-form.php')
-        ) {
-            return;
-        }
-
         $this->loader->add_action('cmb2_admin_init', new Options_Page(), 'register');
 
         $redirect = new Redirect();
         $this->loader->add_filter('login_url', $redirect, 'login_url', 10, 3);
         $this->loader->add_filter('lostpassword_url', $redirect, 'lostpassword_url', 11, 2);
 
-        //Integrations - Members
+        // Integrations - Members
         $this->loader->add_filter('members_is_private_page', new Integrations\Members\Unblock(), 'unblock');
 
     }
@@ -145,7 +137,28 @@ class WSForm_Login
      * Run the loader to execute all of the hooks with WordPress.
      */
     public function run() {
-        $this->loader->run();
+
+        // Load plugin.php to use plugin_active function if not available yet
+        if (!function_exists('is_plugin_active')) {
+            include_once(ABSPATH . 'wp-admin/includes/plugin.php');
+        }
+
+        // Run plugin after plugins are loaded to check for third party conditions
+        add_action('plugins_loaded', function() {
+
+            // Check if ws forms is loaded
+            if (
+                !defined('WS_FORM_VERSION')
+                || !is_plugin_active('ws-form-pro/ws-form.php')
+            ) {
+                return;
+            }
+
+            $this->loader->run();
+
+        }, 20);
+
+
     }
 
     /**
